@@ -75,8 +75,14 @@ section{padding:100px 80px;position:relative;z-index:2;}
 .aside-card:hover{border-color:var(--gold);}
 .aside-val{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:var(--gold-light);line-height:1;margin-bottom:4px;}
 .aside-label{font-size:12px;color:var(--muted);letter-spacing:.5px;}
+
+/* Skills section */
+.skills-group-label{font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin:0 0 16px;display:flex;align-items:center;gap:12px;}
+.skills-group-label::after{content:'';flex:0 0 30px;height:1px;background:var(--gold);opacity:.4;}
+.skills-group{margin-bottom:48px;}
 .skills-layout{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
-.skill-block{background:var(--surface);padding:32px 28px;display:flex;align-items:center;gap:18px;transition:background .3s;position:relative;overflow:hidden;cursor:default;}
+.skills-layout-4{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.skill-block{background:var(--surface);padding:28px;display:flex;align-items:center;gap:18px;transition:background .3s;position:relative;overflow:hidden;cursor:default;}
 .skill-block::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.06),transparent);opacity:0;transition:opacity .3s;}
 .skill-block:hover{background:#13151c;}
 .skill-block:hover::after{opacity:1;}
@@ -84,6 +90,8 @@ section{padding:100px 80px;position:relative;z-index:2;}
 .skill-block:hover .skill-glyph{opacity:.8;}
 .skill-name{font-size:14px;font-weight:500;color:var(--text);margin-bottom:3px;}
 .skill-sub{font-size:11px;color:var(--muted);letter-spacing:.5px;}
+.skill-tag{display:inline-block;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:100px;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.2);color:var(--gold);margin-top:5px;}
+
 #experience{background:var(--bg2);}
 .exp-company-bar{display:flex;justify-content:space-between;align-items:center;padding:28px 32px;background:var(--surface);border:1px solid var(--border);margin-bottom:40px;border-radius:2px;}
 .exp-company-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;}
@@ -99,6 +107,7 @@ section{padding:100px 80px;position:relative;z-index:2;}
 .mod-list{list-style:none;display:flex;flex-direction:column;gap:8px;}
 .mod-list li{font-size:12.5px;color:var(--muted);line-height:1.6;padding-left:14px;position:relative;}
 .mod-list li::before{content:'—';position:absolute;left:0;color:var(--gold);font-size:10px;top:4px;}
+.mod-metric{display:inline-block;font-size:10px;color:var(--gold);background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.15);padding:1px 7px;border-radius:100px;margin-left:4px;font-family:'Outfit',sans-serif;font-weight:500;letter-spacing:.5px;}
 .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
 .edu-card{background:var(--surface);border:1px solid var(--border-soft);padding:40px;border-radius:2px;position:relative;overflow:hidden;transition:border-color .3s;}
 .edu-card::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--gold);transition:height .4s;}
@@ -146,7 +155,7 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
   .hero,section,footer{padding:80px 24px;}
   .hero{padding-top:110px;}
   .hero-inner,.about-layout,.edu-grid,.modules-masonry{grid-template-columns:1fr;gap:40px;}
-  .skills-layout{grid-template-columns:1fr 1fr;}
+  .skills-layout,.skills-layout-4{grid-template-columns:1fr 1fr;}
   .contact-links{grid-template-columns:1fr;}
   .sec-num{display:none;}
   .divider{padding:0 24px;}
@@ -178,9 +187,9 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
       </div>
       <h1>Vikas L<span class="name-last">Halikatti</span></h1>
       <p class="hero-role">Backend Developer · ERP Systems · API Architecture</p>
-      <p class="hero-desc">Crafting enterprise-grade ERP systems with precision and depth. Nearly 2 years engineering production systems for aerospace manufacturing at scale.</p>
+      <p class="hero-desc">Crafting enterprise-grade ERP systems with precision and depth. 1+ year engineering production systems for aerospace manufacturing at scale.</p>
       <div class="hero-actions">
-        <a href="vikaslhalikatti.pdf" class="btn-gold" download>↓ Resume</a>
+        <a href="Vikas_L_Halikatti_Resume.docx" class="btn-gold" download>↓ Resume</a>
         <a href="#contact" class="btn-outline">Get in Touch</a>
       </div>
     </div>
@@ -189,8 +198,8 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
         <div class="hero-card-label">At a Glance</div>
         <div class="hero-stat-row">
           <div class="hero-stat">
-            <div class="hero-stat-val">~2</div>
-            <div class="hero-stat-desc">Years of professional backend experience</div>
+            <div class="hero-stat-val">1+</div>
+            <div class="hero-stat-desc">Year of professional backend experience</div>
           </div>
           <div class="hero-stat">
             <div class="hero-stat-val">100+</div>
@@ -223,13 +232,13 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
   <div class="about-layout">
     <div class="about-text reveal reveal-d1">
       <p>I'm a <span class="about-highlight">Backend Developer</span> with a focus on ERP systems, currently building enterprise software at <span class="about-highlight">Fluent Soft Technologies</span> in Bangalore. My work supports real-time operations for a large aerospace manufacturing client — from production scheduling and inventory control to purchasing workflows and audit trails.</p>
-      <p>My craft lies in translating complex business logic into clean, performant backend code. I design REST APIs, optimize SQL queries, and implement white-box testing to ensure systems behave exactly as intended — even under pressure.</p>
+      <p>My craft lies in translating complex business logic into clean, performant backend code. I design REST APIs, optimize SQL queries, and implement white-box testing to ensure systems behave exactly as intended — even under pressure. Over the past year I've delivered <span class="about-highlight">8+ ERP modules</span> serving <span class="about-highlight">100+ daily users</span>, optimized queries by up to 60%, and cut report load times from ~8s to under 2s.</p>
       <p>I'm actively seeking a <span class="about-highlight">Backend Developer role</span> focused on API development using PHP or Java Spring Boot, where I can bring rigour and craftsmanship to meaningful engineering challenges.</p>
     </div>
     <div class="about-aside reveal reveal-d2">
       <div class="aside-card">
-        <div class="aside-val">~2yr</div>
-        <div class="aside-label">Professional Experience</div>
+        <div class="aside-val">1+</div>
+        <div class="aside-label">Year Professional Experience</div>
       </div>
       <div class="aside-card">
         <div class="aside-val">100+</div>
@@ -237,7 +246,7 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
       </div>
       <div class="aside-card">
         <div class="aside-val">8+</div>
-        <div class="aside-label">Worked on ERP Modules</div>
+        <div class="aside-label">ERP Modules Built</div>
       </div>
       <div class="aside-card" style="border-left-color:var(--gold);background:rgba(201,168,76,.04)">
         <div class="aside-val" style="font-size:18px;color:var(--dim);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.7;">Music · Photography · Cooking</div>
@@ -257,16 +266,87 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
       <h2 class="sec-title">Tools of the<br><em>trade</em></h2>
     </div>
   </div>
-  <div class="skills-layout reveal reveal-d1">
-    <div class="skill-block"><div class="skill-glyph">P</div><div><div class="skill-name">PHP</div><div class="skill-sub">Primary Language</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">J</div><div><div class="skill-name">Java</div><div class="skill-sub">Spring Boot · Hibernate · JDBC</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">S</div><div><div class="skill-name">SQL / MySQL</div><div class="skill-sub">Query Optimization · Joins</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">A</div><div><div class="skill-name">REST APIs</div><div class="skill-sub">Design · Integration · Testing</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">J</div><div><div class="skill-name">JavaScript</div><div class="skill-sub">Frontend Logic</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">R</div><div><div class="skill-name">React</div><div class="skill-sub">Basic UI Components</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">H</div><div><div class="skill-name">HTML & CSS</div><div class="skill-sub">Markup · Styling</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">W</div><div><div class="skill-name">White-box Testing</div><div class="skill-sub">Logic · DB Validation</div></div></div>
-    <div class="skill-block"><div class="skill-glyph">E</div><div><div class="skill-name">ERP Systems</div><div class="skill-sub">Modules · Workflows · Reports</div></div></div>
+
+  <!-- Professional Skills -->
+  <div class="skills-group reveal reveal-d1">
+    <div class="skills-group-label">Professional Skills — used at work</div>
+    <div class="skills-layout">
+      <div class="skill-block">
+        <div class="skill-glyph">P</div>
+        <div><div class="skill-name">PHP</div><div class="skill-sub">Primary Language · ERP Backend</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">S</div>
+        <div><div class="skill-name">SQL / MySQL / MariaDB</div><div class="skill-sub">Query Optimization · Joins</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">A</div>
+        <div><div class="skill-name">REST APIs</div><div class="skill-sub">Design · Integration · Postman</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">G</div>
+        <div><div class="skill-name">Git</div><div class="skill-sub">Version Control · Daily Use</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">J</div>
+        <div><div class="skill-name">JavaScript</div><div class="skill-sub">Frontend Logic · AJAX</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">W</div>
+        <div><div class="skill-name">HTML & CSS</div><div class="skill-sub">Markup · Styling</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">W</div>
+        <div><div class="skill-name">White-box Testing</div><div class="skill-sub">Logic · DB Validation</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">E</div>
+        <div><div class="skill-name">ERP Systems</div><div class="skill-sub">Modules · Workflows · Reports</div></div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">J</div>
+        <div><div class="skill-name">JDBC</div><div class="skill-sub">Java DB Connectivity</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Skills -->
+  <div class="skills-group reveal reveal-d2">
+    <div class="skills-group-label">Additional Skills — self-learned & certified</div>
+    <div class="skills-layout">
+      <div class="skill-block">
+        <div class="skill-glyph">J</div>
+        <div>
+          <div class="skill-name">Java</div>
+          <div class="skill-sub">OOP · Core Concepts</div>
+          <div class="skill-tag">JSpiders Certified</div>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">S</div>
+        <div>
+          <div class="skill-name">Spring Boot</div>
+          <div class="skill-sub">REST APIs · MVC</div>
+          <div class="skill-tag">Self-learned</div>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">H</div>
+        <div>
+          <div class="skill-name">Hibernate</div>
+          <div class="skill-sub">ORM · JPA</div>
+          <div class="skill-tag">Self-learned</div>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-glyph">R</div>
+        <div>
+          <div class="skill-name">React.js</div>
+          <div class="skill-sub">UI Library · Basic Components</div>
+          <div class="skill-tag">Self-learned</div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -283,7 +363,7 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
   <div class="exp-company-bar reveal">
     <div>
       <div class="exp-company-name">Fluent Soft Technologies</div>
-      <div style="font-size:13px;color:var(--muted);margin-top:4px;">Bangalore, India · ERP Software</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:4px;">Bangalore, India · ERP Software · Aerospace Manufacturing Domain</div>
     </div>
     <div style="text-align:right;">
       <div style="font-size:13px;color:var(--dim);">Junior ERP Developer</div>
@@ -294,47 +374,48 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
     <div class="mod reveal reveal-d1">
       <div class="mod-title">Production · Detail Capacity Planning</div>
       <ul class="mod-list">
-        <li>Scheduling logic based on live stock availability</li>
-        <li>Machine-wise operation start and end time calculations</li>
-        <li>Operation dependency resolution logic</li>
+        <li>Scheduling engine across <span class="mod-metric">10+ machines</span> based on live stock</li>
+        <li>Handles <span class="mod-metric">500+ work orders</span> per production cycle</li>
+        <li>Dependency resolution reduced manual effort by <span class="mod-metric">~70%</span></li>
       </ul>
     </div>
     <div class="mod reveal reveal-d2">
       <div class="mod-title">Pre-GRN & GRN</div>
       <ul class="mod-list">
-        <li>Invoice validation bridge between Pre-GRN and GRN</li>
-        <li>Ensured GRN cost never exceeded pre-GRN invoice value</li>
+        <li>Invoice validation across <span class="mod-metric">500+ monthly</span> purchase transactions</li>
+        <li>GRN cost caps enforced — unauthorized approvals near zero</li>
         <li>Approval workflows for price deviations</li>
       </ul>
     </div>
     <div class="mod reveal reveal-d3">
       <div class="mod-title">Master Parts Pricing</div>
       <ul class="mod-list">
-        <li>Compared awarded vs. purchase prices across part categories</li>
-        <li>Percentage variance with automated workflow triggers</li>
+        <li>Compared awarded vs. purchase prices across <span class="mod-metric">4 part categories</span></li>
+        <li>Automated workflow triggers cut review cycle by <span class="mod-metric">~40%</span></li>
       </ul>
     </div>
     <div class="mod reveal reveal-d1">
       <div class="mod-title">Planning & Production Reports</div>
       <ul class="mod-list">
-        <li>Machine-level and part-level planning report generation</li>
+        <li><span class="mod-metric">6+ reports</span> used daily across <span class="mod-metric">3 shifts</span></li>
         <li>Scheduled vs. produced quantity comparison from work orders</li>
-        <li>QA workload tracking and ETA calculation engine</li>
+        <li>QA workload tracking and automated ETA calculations</li>
       </ul>
     </div>
     <div class="mod reveal reveal-d2">
       <div class="mod-title">Software Audit Trail</div>
       <ul class="mod-list">
-        <li>System-wide audit trail for all data change events</li>
+        <li>System-wide trail covering <span class="mod-metric">15+ modules</span></li>
+        <li>Logs all changes with user, timestamp, before/after values</li>
         <li>Diff engine comparing submitted values vs. backend records</li>
       </ul>
     </div>
     <div class="mod reveal reveal-d3">
       <div class="mod-title">API Dev · SQL Optimization</div>
       <ul class="mod-list">
-        <li>REST API for treatment cost retrieval from internal ERP</li>
-        <li>Cost reports for Service Purchase Order department</li>
-        <li>Removed redundant joins; in-memory arrays for speed</li>
+        <li>REST API reduced report turnaround from <span class="mod-metric">1 day → real-time</span></li>
+        <li>Optimized <span class="mod-metric">10+ queries</span> — load time down <span class="mod-metric">~60%</span></li>
+        <li>In-memory arrays cut heavy page load from <span class="mod-metric">~8s → &lt;2s</span></li>
       </ul>
     </div>
   </div>
@@ -355,7 +436,7 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
       <div class="edu-icon">♦</div>
       <div class="edu-degree">B.E. — Information Science &amp; Engineering</div>
       <div class="edu-school">Sambhram Institute of Technology</div>
-      <div class="edu-year">2018 — 2022 · Bangalore, India</div>
+      <div class="edu-year">2018 — 2023 · Bangalore, India</div>
     </div>
     <div class="edu-card reveal reveal-d2">
       <div class="edu-icon">✦</div>
@@ -387,9 +468,13 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
         <div class="cl-icon">⬡</div>
         <div><div class="cl-label">GitHub</div><div class="cl-val">vikashalikatti</div></div>
       </a>
-      <a href="https://www.linkedin.com/in/vikas-l-halikatti-357973219/"  target="_blank" class="contact-link">
+      <a href="https://www.linkedin.com/in/vikas-l-halikatti-357973219/" target="_blank" class="contact-link">
         <div class="cl-icon">◈</div>
         <div><div class="cl-label">LinkedIn</div><div class="cl-val">Vikas L Halikatti</div></div>
+      </a>
+      <a href="https://vikashalikatti.github.io/" target="_blank" class="contact-link" style="grid-column:span 2;">
+        <div class="cl-icon">◉</div>
+        <div><div class="cl-label">Portfolio</div><div class="cl-val">vikashalikatti.github.io</div></div>
       </a>
     </div>
     <p class="contact-location reveal reveal-d2">📍 Bengaluru, Karnataka, India</p>
@@ -402,7 +487,6 @@ footer{border-top:1px solid var(--border-soft);padding:32px 80px;display:flex;ju
 </footer>
 
 <script>
-// Cursor
 const cur=document.getElementById('cur'),ring=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
@@ -412,7 +496,6 @@ document.querySelectorAll('a,button,.skill-block,.mod,.aside-card,.edu-card').fo
   el.addEventListener('mouseleave',()=>{cur.style.width='8px';cur.style.height='8px';ring.style.width='40px';ring.style.height='40px';});
 });
 
-// Particles
 const canvas=document.getElementById('particles'),ctx=canvas.getContext('2d');
 let W,H,pts=[];
 function resize(){W=canvas.width=innerWidth;H=canvas.height=innerHeight;}
@@ -433,7 +516,6 @@ for(let i=0;i<55;i++)pts.push({x:Math.random()*3000,y:Math.random()*2000,vx:(Mat
   requestAnimationFrame(draw);
 })();
 
-// Scroll reveal
 const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
